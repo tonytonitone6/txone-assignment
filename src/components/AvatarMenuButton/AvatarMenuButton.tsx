@@ -16,10 +16,10 @@ const AvatarMenuButton = ({ icon, children }: MenuButtonProps) => {
 
 
   return (
-    <MenuToggle>
-      <Button {...defaultStyles}>
+    <MenuToggle aria-label="toggle-button">
+      {/* <Button {...defaultStyles}> */}
         {children}
-      </Button>
+      {/* </Button> */}
       {icon ? icon : ''}
     </MenuToggle>
   )

@@ -25,7 +25,7 @@ const AvatarMenu = ({options}: AvatarMenuProps ) => {
       <MenuList width="max-content">
         {options.map(option => {
           return (
-            <MenuItem>
+            <MenuItem key={option.text}>
               <Flex flex="none" mr="3x">
                 {option.icon ?? defaultIcon}
               </Flex>
