@@ -1,4 +1,6 @@
 import type { ColumnDef } from '@tanstack/react-table';
+import { Box } from '@tonic-ui/react';
+
 import AvatarMenu from '../AvatarMenu/AvatarMenu';
 import { mockOptions } from '../../pages/lobby';
 
@@ -45,9 +47,9 @@ export const columns: ExtendColumnDef<Event>[] = [
     size: 100,
 		columnHelper: (_) => {
       return (
-        <div style={{position: 'absolute', right: 0}}>
+        <Box position="absolute" right={0}>
           <AvatarMenu options={mockOptions} />
-        </div>
+        </Box>
       )
 		},
 		meta: {
@@ -58,3 +60,12 @@ export const columns: ExtendColumnDef<Event>[] = [
 		}
   },
 ];
+
+export const mockData: Event[] = [
+  { id: 1, eventType: 'Virus/Malware', affectedDevices: 20, detections: 634 },
+  { id: 2, eventType: 'Spyware/Grayware', affectedDevices: 20, detections: 634 },
+  { id: 3, eventType: 'URL Filtering', affectedDevices: 15, detections: 598 },
+  { id: 4, eventType: 'Web Reputation', affectedDevices: 15, detections: 598 },
+  { id: 5, eventType: 'Network Virus', affectedDevices: 15, detections: 497 },
+  { id: 6, eventType: 'Application Control', affectedDevices: 0, detections: 0 }
+]

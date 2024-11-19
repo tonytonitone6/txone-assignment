@@ -20,7 +20,4 @@ const useDistance = () => {
       window.removeEventListener('resize', calculatePosition);
     }
   }, []);
-
-
-  
 }

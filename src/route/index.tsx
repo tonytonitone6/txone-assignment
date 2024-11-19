@@ -1,19 +1,26 @@
-import { lazy, Suspense } from 'react';
-import { createBrowserRouter, createRoutesFromElements, Route, RouteObject, Routes } from 'react-router-dom';
+import { lazy } from 'react';
+import { createBrowserRouter, createRoutesFromElements, Route, RouteObject } from 'react-router-dom';
 
 import type { RouteConfig } from './types';
 
-import Lobby from '../pages/lobby';
+import Nav from '../pages/nav';
+const Lobby = lazy(() => import('../pages/lobby'));
 const Table = lazy(() => import('../pages/table'));
 
 export const mainRoutes: RouteObject[] = [
   {
     path: '/',
-    element: <Lobby />,
-  },
-  {
-    path: '/table',
-    element: <Table />
+    element: <Nav />,
+    children: [
+      {
+        path: 'menu',
+        element: <Lobby />,
+      },
+      {
+        path: 'table',
+        element: <Table />
+      }
+    ]
   }
 ];
 
