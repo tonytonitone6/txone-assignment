@@ -1,14 +1,9 @@
 import React, {Suspense} from 'react';
 import { TonicProvider } from '@tonic-ui/react';
-
-import { RouterProvider, BrowserRouter } from 'react-router-dom';
-
+import { RouterProvider } from 'react-router-dom';
 
 import CenterLayout from './layout/CenterLayout';
-
 import { structRoutes, mainRoutes } from './route';
-
-
 
 const App = () => {
   return (
